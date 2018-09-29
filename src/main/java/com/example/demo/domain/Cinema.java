@@ -9,6 +9,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -19,10 +20,12 @@ public class Cinema {
 	String name;
 	String address;
 
+	@ToString.Exclude
 	@ManyToMany
 	@JoinTable(name = "[cinema_movie]")
 	List<Movie> movies;
 
+	@ToString.Exclude
 	@OneToMany
 	List<MovieSession> sessions;
 }
