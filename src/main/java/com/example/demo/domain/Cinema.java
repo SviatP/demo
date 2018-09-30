@@ -21,8 +21,7 @@ public class Cinema {
 	String address;
 
 	@ToString.Exclude
-	@ManyToMany
-	@JoinTable(name = "[cinema_movie]")
+	@ManyToMany(mappedBy = "cinemas")
 	List<Movie> movies;
 
 	@ToString.Exclude

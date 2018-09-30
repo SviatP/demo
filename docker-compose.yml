@@ -10,7 +10,7 @@ services:
       - MYSQL_PASSWORD=test123
     healthcheck:
       test: ["CMD", "ls"]
-      interval: 3s
+      interval: 5s
       timeout: 2s
       retries: 1
     volumes:
