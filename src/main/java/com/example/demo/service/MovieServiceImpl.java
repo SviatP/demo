@@ -4,9 +4,6 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.function.Predicate;
 
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.Response;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,26 +21,24 @@ public class MovieServiceImpl implements MovieService {
 	private TicketRepository ticketRepository;
 
 	@Override
-	public List<Movie> findAll() {
-		return movieRepository.findAll();
-	}
-
-	@Override
 	public List<Movie> findByNameContains(String word) {
 		return movieRepository.findByNameContaining(word);
 	}
 
 	@Override
 	public BigDecimal getIncome(String name, String period) {
+		try {
+			SessionPeriod sessionPeriod = SessionPeriod.valueOf(period.toUpperCase());
+			Predicate<Ticket> match = ticket -> ticket.getSession().getMovie().getName().equals(name)
+					&& ticket.getSession().getStart().getHour() >= sessionPeriod.getStart()
+					&& ticket.getSession().getEnd().getHour() < sessionPeriod.getEnd();
 
-		SessionPeriod sessionPeriod = SessionPeriod.valueOf(period.toUpperCase());
-
-		Predicate<Ticket> match = ticket -> ticket.getSession().getMovie().getName().equals(name)
-				&& ticket.getSession().getStart().getHour() >= sessionPeriod.getStart()
-				&& ticket.getSession().getEnd().getHour() < sessionPeriod.getEnd();
-
-		return ticketRepository.findAll().stream().filter(match).map(Ticket::getPrice).reduce(BigDecimal::add)
-				.orElseThrow(() -> new WebApplicationException("cant find requested data", Response.Status.BAD_REQUEST));
+			return ticketRepository.findAll().stream().filter(match).map(Ticket::getPrice).reduce(BigDecimal::add)
+					.orElseThrow(() -> new IllegalStateException("cant find requested data"));
+		} catch (IllegalArgumentException e) {
+			//logging and catch logic (generating WebApplicationException or above)
+			throw new IllegalStateException("bad requested period");
+		}
 	}
 
 	public enum SessionPeriod {

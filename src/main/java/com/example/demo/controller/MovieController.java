@@ -20,13 +20,6 @@ public class MovieController {
 	@Autowired
 	private MovieService movieService;
 
-
-	@GetMapping("/all")
-	public List<Movie> findAll() {
-		return movieService.findAll();
-	}
-
-
 	@GetMapping("/search")
 	public List<Movie> findByName(@RequestParam(value = "name") String name) {
 		return movieService.findByNameContains(name);

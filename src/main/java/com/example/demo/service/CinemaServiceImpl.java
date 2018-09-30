@@ -7,7 +7,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,15 +55,4 @@ public class CinemaServiceImpl implements CinemaService {
 		return ads;
 	}
 
-//	private List<String> filtered(List<MovieSession> list) {
-//		List<String> ads = new ArrayList<>();
-//		list.stream().reduce()
-//
-//
-//	}
-
-	public static void main(String[] args) {
-		System.out.println(ChronoUnit.MINUTES.between(LocalDateTime.of(2018, 10, 1, 0,0,0),
-				LocalDateTime.of(2018, 10, 1, 0,20,0)));
-	}
 }

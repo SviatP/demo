@@ -16,8 +16,8 @@ public class DateUtilsTest {
 	public void fromStingWithoutTime() throws Exception {
 		LocalDateTime testDate = DateUtils.fromStingWithoutTime("2020-06-03");
 		assertThat(testDate.getYear(), is(2020));
-		assertThat(testDate.getMonth(), is(6));
-		assertThat(testDate.getYear(), is(3));
+		assertThat(testDate.getMonth().getValue(), is(6));
+		assertThat(testDate.getDayOfMonth(), is(3));
 	}
 
 	@Test

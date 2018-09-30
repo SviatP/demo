@@ -12,6 +12,7 @@ import com.example.demo.domain.Cinema;
 public interface CinemaRepository extends CrudRepository<Cinema, Integer>{
 
 	List<Cinema> findAll();
+
 	Cinema findByName(String name);
 
 	@Query(value = "SELECT c.id, c.address, c.name FROM cinema c JOIN ( SELECT * FROM movie_session WHERE end <= :date) s ON c.id = s.cinema GROUP BY s.cinema HAVING  COUNT(s.cinema) > :count;",

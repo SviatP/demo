@@ -10,11 +10,13 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 
 @Entity
 @Data
+@Builder
 public class Cinema {
 
 	@Id
