@@ -1,0 +1,30 @@
+version: '2.1'
+
+services:
+  mysql-docker-container:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root123
+      - MYSQL_DATABASE=ciklum_test
+      - MYSQL_USER=app_user
+      - MYSQL_PASSWORD=test123
+    healthcheck:
+      test: ["CMD", "ls"]
+      interval: 3s
+      timeout: 2s
+      retries: 1
+    volumes:
+      - /data/mysql
+      - ~/workspace/frontoffice/demo/src/main/resources/init-scripts:/docker-entrypoint-initdb.d
+  spring-boot-jpa-app:
+    image: spring-boot-jpa-image
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      mysql-docker-container:
+          condition: "service_healthy"
+    ports:
+      - 8087:8080
+    volumes:
+      - /data/spring-boot-app

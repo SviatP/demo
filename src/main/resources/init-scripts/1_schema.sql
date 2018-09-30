@@ -1,7 +1,5 @@
 DROP SCHEMA IF EXISTS ciklum_test ;
-DROP SCHEMA IF EXISTS aaaaaaaaaa ;
 CREATE SCHEMA ciklum_test;
-CREATE SCHEMA aaaaaaaaaa;
 
 
 -- auto-generated definition
