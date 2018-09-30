@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.sviat.demo.service;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -18,11 +18,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.example.demo.domain.Movie;
-import com.example.demo.domain.MovieSession;
-import com.example.demo.domain.Ticket;
-import com.example.demo.repository.MovieRepository;
-import com.example.demo.repository.TicketRepository;
+import com.sviat.demo.domain.Movie;
+import com.sviat.demo.domain.MovieSession;
+import com.sviat.demo.domain.Ticket;
+import com.sviat.demo.repository.MovieRepository;
+import com.sviat.demo.repository.TicketRepository;
 import com.google.common.collect.ImmutableList;
 
 @RunWith(MockitoJUnitRunner.class)

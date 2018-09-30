@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package com.sviat.demo.controller;
 
-import static com.example.demo.DateUtils.fromStingWithoutTime;
+import static com.sviat.demo.DateUtils.fromStingWithoutTime;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.domain.Cinema;
-import com.example.demo.service.CinemaServiceImpl;
+import com.sviat.demo.domain.Cinema;
+import com.sviat.demo.service.CinemaServiceImpl;
 
 @RestController
 @RequestMapping("/api/cinema")

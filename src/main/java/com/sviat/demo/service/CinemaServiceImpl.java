@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.sviat.demo.service;
 
 import static java.util.stream.Collectors.toList;
 
@@ -11,10 +11,10 @@ import java.util.function.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.domain.Cinema;
-import com.example.demo.domain.MovieSession;
-import com.example.demo.repository.CinemaRepository;
-import com.example.demo.repository.MovieSessionRepository;
+import com.sviat.demo.domain.Cinema;
+import com.sviat.demo.domain.MovieSession;
+import com.sviat.demo.repository.CinemaRepository;
+import com.sviat.demo.repository.MovieSessionRepository;
 
 @Service
 public class CinemaServiceImpl implements CinemaService {

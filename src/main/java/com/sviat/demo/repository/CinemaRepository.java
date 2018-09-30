@@ -1,4 +1,4 @@
-package com.example.demo.repository;
+package com.sviat.demo.repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.example.demo.domain.Cinema;
+import com.sviat.demo.domain.Cinema;
 
 public interface CinemaRepository extends CrudRepository<Cinema, Integer>{
 

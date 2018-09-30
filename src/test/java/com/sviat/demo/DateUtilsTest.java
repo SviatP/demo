@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.sviat.demo;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;

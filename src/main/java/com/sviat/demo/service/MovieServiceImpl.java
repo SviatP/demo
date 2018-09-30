@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.sviat.demo.service;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -7,10 +7,10 @@ import java.util.function.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.domain.Movie;
-import com.example.demo.domain.Ticket;
-import com.example.demo.repository.MovieRepository;
-import com.example.demo.repository.TicketRepository;
+import com.sviat.demo.domain.Movie;
+import com.sviat.demo.domain.Ticket;
+import com.sviat.demo.repository.MovieRepository;
+import com.sviat.demo.repository.TicketRepository;
 
 @Service
 public class MovieServiceImpl implements MovieService {

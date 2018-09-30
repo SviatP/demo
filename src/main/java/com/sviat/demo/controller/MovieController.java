@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.sviat.demo.controller;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.domain.Movie;
-import com.example.demo.service.MovieService;
+import com.sviat.demo.domain.Movie;
+import com.sviat.demo.service.MovieService;
 
 @RestController
 @RequestMapping("/api/movie")

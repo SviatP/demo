@@ -1,10 +1,10 @@
-package com.example.demo.repository;
+package com.sviat.demo.repository;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.example.demo.domain.Movie;
+import com.sviat.demo.domain.Movie;
 
 public interface MovieRepository extends CrudRepository<Movie, Integer> {
 
