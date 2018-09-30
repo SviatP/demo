@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.ToString;
 
@@ -17,17 +19,22 @@ import lombok.ToString;
 @Data
 public class MovieSession {
 	@Id
+	@JsonIgnore
 	Integer id;
 
 	@ToString.Exclude
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne()
 	@JoinColumn(name = "movie")
 	Movie movie;
+	@ManyToOne()
+	@JoinColumn(name = "cinema")
+	Cinema cinema;
 	LocalDateTime start;
 	LocalDateTime end;
 
 	@OneToMany(mappedBy = "session" )
 	@ToString.Exclude
+	@JsonIgnore
 	List<Ticket> tickets;
 }

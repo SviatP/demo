@@ -82,3 +82,8 @@ CREATE TABLE ticket
 );
 
 
+# SELECT c.id, c.address, c.name FROM cinema c JOIN ( SELECT * FROM movie_session WHERE end <= '2019-09-29 12:30:00') s ON c.id = s.cinema GROUP BY s.cinema HAVING  COUNT(s.cinema) > 3;
+# SELECT c.id, c.address, c.name FROM cinema c JOIN ( SELECT * FROM movie_session WHERE end <= '2019-09-29 12:30:00') s ON c.id = s.cinema;
+# SELECT c.id, c.address, c.name FROM cinema c JOIN movie_session s ON c.id = s.cinema GROUP BY s.cinema HAVING  COUNT(s.cinema) > 3;
+
+

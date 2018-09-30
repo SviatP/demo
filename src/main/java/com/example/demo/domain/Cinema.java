@@ -8,6 +8,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.ToString;
 
@@ -16,15 +18,18 @@ import lombok.ToString;
 public class Cinema {
 
 	@Id
+	@JsonIgnore
 	Integer id;
 	String name;
 	String address;
 
 	@ToString.Exclude
 	@ManyToMany(mappedBy = "cinemas")
+	@JsonIgnore
 	List<Movie> movies;
 
 	@ToString.Exclude
-	@OneToMany
+	@JsonIgnore
+	@OneToMany(mappedBy = "cinema")
 	List<MovieSession> sessions;
 }

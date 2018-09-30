@@ -10,6 +10,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.ToString;
 
@@ -18,14 +20,17 @@ import lombok.ToString;
 public class Movie {
 
 	@Id
+	@JsonIgnore
 	Integer id;
 	String name;
 	Long duration;
 
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany()
+	@JsonIgnore
 	List<MovieSession> sessions;
 
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany()
+	@JsonIgnore
 	@ToString.Exclude
 	@JoinTable(name = "cinema_movie",
 			joinColumns = { @JoinColumn(name = "cinema_id") },
