@@ -8,10 +8,11 @@ docker-compose up
 
 ```
 
-
-## Login: ben
-## Password: benspassword
-
+```
+To authentificate use next data:
+* Login: ben
+* Password: benspassword
+```
 * task2: http://localhost:8087/api/cinema/session?start=_`%yyyy-mm-dd%`_&end=_`%yyyy-mm-dd%`_&count=_`%count%`_
 
 * ex: http://localhost:8087/api/cinema/session?start=2012-06-06&end=2022-06-06&count=2
