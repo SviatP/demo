@@ -9,7 +9,8 @@ docker-compose up
 ```
 
 
-
+## Login: ben
+## Password: benspassword
 
 * task2: http://localhost:8087/api/cinema/session?start=_`%yyyy-mm-dd%`_&end=_`%yyyy-mm-dd%`_&count=_`%count%`_
 

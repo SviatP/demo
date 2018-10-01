@@ -1,4 +1,4 @@
-package com.sviat.demo;
+package com.sviat.demo.utils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

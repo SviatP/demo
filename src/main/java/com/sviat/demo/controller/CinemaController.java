@@ -1,6 +1,6 @@
 package com.sviat.demo.controller;
 
-import static com.sviat.demo.DateUtils.fromStingWithoutTime;
+import static com.sviat.demo.utils.DateUtils.fromStingWithoutTime;
 
 import java.time.LocalDateTime;
 import java.util.List;
