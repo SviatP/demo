@@ -1,8 +1,9 @@
 package com.sviat.demo.service;
 
-import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
+import com.sviat.demo.dto.IncomeDto;
 import com.sviat.demo.domain.Movie;
 
 public interface MovieService {
@@ -17,8 +18,9 @@ public interface MovieService {
 	/**
 	 * Provide information about sales and income over all cinemas for specified movie and period
 	 * @param name is movie name
-	 * @param period specified period of session (like morning, day, evening, night)
-	 * @return calculated income
+	 * @param start specified period of session
+	 * @param end specified period of session
+	 * @return calculated income {@link IncomeDto}
 	 */
-	BigDecimal getIncome(String name, String period);
+	IncomeDto getIncome(String name, LocalDateTime start, LocalDateTime end);
 }

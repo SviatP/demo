@@ -2,7 +2,6 @@ package com.sviat.demo.service;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.fail;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -18,12 +17,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import com.google.common.collect.ImmutableList;
 import com.sviat.demo.domain.Movie;
 import com.sviat.demo.domain.MovieSession;
 import com.sviat.demo.domain.Ticket;
+import com.sviat.demo.dto.IncomeDto;
+import com.sviat.demo.dto.SessionPeriod;
 import com.sviat.demo.repository.MovieRepository;
 import com.sviat.demo.repository.TicketRepository;
-import com.google.common.collect.ImmutableList;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MovieServiceImplTest {
@@ -46,32 +47,12 @@ public class MovieServiceImplTest {
 	@Test
 	public void getIncome() throws Exception {
 		when(ticketRepository.findAll()).thenReturn(getTickets());
-		BigDecimal result = movieService.getIncome("Astral", "morning");
-		Assert.assertThat(result, is(BigDecimal.valueOf(30)));
-	}
-
-
-	@Test
-	public void getIncome_invalidPeriod() throws Exception {
-		try {
-			movieService.getIncome("Astral", "moarning");
-			fail();
-		} catch (IllegalStateException e) {
-			Assert.assertThat(e.getMessage(), is("bad requested period"));
-		}
-
-	}
-
-	@Test
-	public void getIncome_invalidMovie() throws Exception {
-		when(ticketRepository.findAll()).thenReturn(getTickets());
-		try {
-			movieService.getIncome("asd", "morning");
-			fail();
-		} catch (IllegalStateException e) {
-			Assert.assertThat(e.getMessage(), is("cant find requested data"));
-		}
-
+		IncomeDto result = movieService.getIncome("Astral",
+				LocalDateTime.of(2011, 10, 10, 9, 0, 0),
+				LocalDateTime.of(2022, 10, 10, 9, 0, 0));
+		Assert.assertThat(result.getGeneralIncome(), is(BigDecimal.valueOf(50)));
+		Assert.assertThat(result.getPeriodMap().get(SessionPeriod.MORNING), is(BigDecimal.valueOf(30)));
+		Assert.assertThat(result.getPeriodMap().get(SessionPeriod.DAY), is(BigDecimal.valueOf(20)));
 	}
 
 	private List<Ticket> getTickets() {
@@ -116,7 +97,6 @@ public class MovieServiceImplTest {
 								.build())
 						.price(BigDecimal.TEN)
 						.build()
-
 		);
 	}
 
