@@ -15,7 +15,7 @@ services:
       retries: 1
     volumes:
       - /data/mysql
-      - ~/workspace/frontoffice/demo/src/main/resources/init-scripts:/docker-entrypoint-initdb.d
+      - ./src/main/resources/init-scripts:/docker-entrypoint-initdb.d
   spring-boot-jpa-app:
     image: spring-boot-jpa-image
     build:
