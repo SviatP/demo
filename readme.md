@@ -1,14 +1,5 @@
 
-# to run the application you should change docker-compose.yml file to set correct volumes for mysql container (raw 18): 
-* actual: **- ~/workspace/frontoffice**/demo/src/main/resources/init-scripts:/docker-entrypoint-initdb.d
-* expected: **- ~/path/to/your/folder/storing/project**/demo/src/main/resources/init-scripts:/docker-entrypoint-initdb.d
-
-
-
-
-
-
-after that run from project root commands below:
+# to run the application download it and run from project root commands below:
 
 ```
 mvn clean install

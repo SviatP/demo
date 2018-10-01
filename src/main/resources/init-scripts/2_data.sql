@@ -13,20 +13,20 @@ INSERT INTO ciklum_test.movie (duration, name) VALUES (125, 'Smurfs');
 INSERT INTO ciklum_test.movie (duration, name) VALUES (140, 'Bond');
 
 
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (1, 1);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (1, 2);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (1, 4);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (1, 5);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (2, 1);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (2, 3);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (2, 4);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (2, 5);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (3, 1);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (3, 2);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (3, 5);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (4, 1);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (4, 2);
-INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (5, 5);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (1, 1);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (1, 2);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (1, 4);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (1, 5);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (2, 1);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (2, 3);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (2, 4);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (2, 5);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (3, 1);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (3, 2);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (3, 5);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (4, 1);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (4, 2);
+# INSERT INTO ciklum_test.cinema_movie (movie_id, cinema_id) VALUES (5, 5);
 
 INSERT INTO ciklum_test.movie_session (movie, cinema, start, end) VALUES (1, 1, '2019-09-29 09:30:00', '2019-09-29 11:00:00');
 INSERT INTO ciklum_test.movie_session (movie, cinema, start, end) VALUES (1, 1, '2019-09-29 09:30:00', '2019-09-29 11:00:00');

@@ -5,7 +5,6 @@ CREATE SCHEMA ciklum_test;
 -- auto-generated definition
 USE ciklum_test;
 DROP TABLE IF EXISTS ciklum_test.ticket;
-DROP TABLE IF EXISTS ciklum_test.cinema_movie;
 DROP TABLE IF EXISTS ciklum_test.movie_session;
 DROP TABLE IF EXISTS ciklum_test.movie;
 DROP TABLE IF EXISTS ciklum_test.cinema;
@@ -26,25 +25,6 @@ CREATE TABLE movie
   name    VARCHAR(255) NULL
 )
   ENGINE = InnoDB;
-
-CREATE TABLE cinema_movie
-(
-  movie_id  INT NOT NULL,
-  cinema_id INT NOT NULL,
-  PRIMARY KEY (movie_id, cinema_id),
-  CONSTRAINT cinema_movie_ibfk_1
-  FOREIGN KEY (movie_id) REFERENCES movie (id)
-    ON UPDATE CASCADE
-    ON DELETE CASCADE,
-  CONSTRAINT cinema_movie_ibfk_2
-  FOREIGN KEY (cinema_id) REFERENCES cinema (id)
-    ON UPDATE CASCADE
-    ON DELETE CASCADE
-)
-  ENGINE = InnoDB;
-CREATE INDEX cinema_id
-  ON cinema_movie (cinema_id);
-
 
 CREATE TABLE movie_session
 (
